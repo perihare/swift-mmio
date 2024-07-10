@@ -49,6 +49,70 @@ extension Bool: BitFieldProjectable {
   }
 }
 
+extension UInt8: BitFieldProjectable {
+  public static let bitWidth = 8
+
+  @inlinable @inline(__always)
+  public init<Storage>(storage: Storage)
+  where Storage: FixedWidthInteger & UnsignedInteger {
+    self.init(storage)
+  }
+
+  @inlinable @inline(__always)
+  public func storage<Storage>(_: Storage.Type) -> Storage
+  where Storage: FixedWidthInteger & UnsignedInteger {
+    Storage(self)
+  }
+}
+
+extension UInt16: BitFieldProjectable {
+  public static let bitWidth = 16
+
+  @inlinable @inline(__always)
+  public init<Storage>(storage: Storage)
+  where Storage: FixedWidthInteger & UnsignedInteger {
+    self.init(storage)
+  }
+
+  @inlinable @inline(__always)
+  public func storage<Storage>(_: Storage.Type) -> Storage
+  where Storage: FixedWidthInteger & UnsignedInteger {
+    Storage(self)
+  }
+}
+
+extension UInt32: BitFieldProjectable {
+  public static let bitWidth = 32
+
+  @inlinable @inline(__always)
+  public init<Storage>(storage: Storage)
+  where Storage: FixedWidthInteger & UnsignedInteger {
+    self.init(storage)
+  }
+
+  @inlinable @inline(__always)
+  public func storage<Storage>(_: Storage.Type) -> Storage
+  where Storage: FixedWidthInteger & UnsignedInteger {
+    Storage(self)
+  }
+}
+
+extension UInt64: BitFieldProjectable {
+  public static let bitWidth = 64
+
+  @inlinable @inline(__always)
+  public init<Storage>(storage: Storage)
+  where Storage: FixedWidthInteger & UnsignedInteger {
+    self.init(storage)
+  }
+
+  @inlinable @inline(__always)
+  public func storage<Storage>(_: Storage.Type) -> Storage
+  where Storage: FixedWidthInteger & UnsignedInteger {
+    Storage(self)
+  }
+}
+
 /// Default implementation of `BitFieldProjectable` for `RawRepresentable`
 /// types.
 ///
